@@ -12,3 +12,35 @@
 - Platforms: platforms: linux/amd64,linux/arm64
 
  
+ > 练习2  
+ ```shell
+vagrant up  
+vagrant ssh
+```
+安装 [k3s](https://k3s.io/)  
+```
+kubectl get node
+kubeclt gry po -A
+```
+安装[ArgoCD](https://argo-cd.readthedocs.io/en/stable/)
+
+```
+kubectl get pods -n argocd
+```
+接下来访问AragoCD应用
+```
+# 获取命名空间下所有服务 
+kubectl get svc -n argocd
+```
+找到端口从vritualBox暴露给主机
+复制清单更改为节点端口 用nodeport公开argoCD服务器
+```shell
+kubectl get svc -n argocd argocd-server -o yaml > argocd-nodeport.yaml
+```
+修改配置参考[kubernetes配置](https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport)  
+应用配置 `kubectl apply -f argocd-nodeport.yaml `  
+检查 `kubectl get svc -n argocd argocd-server`
+
+vitrualBox有一个静态IP(vagratefile中有配置)加端口号[登录](https://argo-cd.readthedocs.io/en/stable/getting_started/#4-login-using-the-cli)  
+[需要applicationCRD for argo](/argocd-python.yaml)
+这个文件指定了目标集群和清单来源

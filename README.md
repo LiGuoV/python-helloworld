@@ -38,7 +38,10 @@ kubectl get svc -n argocd
 kubectl get svc -n argocd argocd-server -o yaml > argocd-nodeport.yaml
 ```
 修改配置参考[kubernetes配置](https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport)  
-应用配置 `kubectl apply -f argocd-nodeport.yaml `  
+最终文件[argocd-nodeport.yaml](/argocd/argocd-server-nodeport.yaml)
+
+应用配置： `kubectl apply -f argocd-nodeport.yaml `  
+
 检查 `kubectl get svc -n argocd argocd-server`
 
 vitrualBox有一个静态IP(vagratefile中有配置)加端口号[登录](https://argo-cd.readthedocs.io/en/stable/getting_started/#4-login-using-the-cli)  

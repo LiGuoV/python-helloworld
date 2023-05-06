@@ -44,3 +44,5 @@ kubectl get svc -n argocd argocd-server -o yaml > argocd-nodeport.yaml
 vitrualBox有一个静态IP(vagratefile中有配置)加端口号[登录](https://argo-cd.readthedocs.io/en/stable/getting_started/#4-login-using-the-cli)  
 [需要applicationCRD for argo](/argocd-python.yaml)
 这个文件指定了目标集群和清单来源
+`kubectl apply -f argocd-python.yaml`  
+`kubectl get app -n argocd `

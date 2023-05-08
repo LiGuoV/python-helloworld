@@ -4,7 +4,10 @@
 # 从集群到PaaS
 ![](/image/faas.png)
  PaaS 解决方案可将工程工作从基础设施管理转移到产品开发。此外，它在应用程序的整个发布过程中提供了强大的开发人员体验，其中主要功能是通过 UI 或控制台使用的。但是，此产品有一个主要缺点：供应商和应用程序目录锁定。所以有了开源Paas CloudFundry
+
  其主要组件可以在集群中作为 pod 运行  
+
+ PaaS 提供底层基础设施的管理，例如存储、数据库、计算、托管等等。此外，大多数解决方案将提供数据分析、安全性和高级调度  
 低交互的应用占用资源，不符合成本效益 进而有了FaaS
 
  
@@ -79,7 +82,8 @@ kubectl get svc -n argocd argocd-server -o yaml > argocd-nodeport.yaml
 
 
 # helm 模板配置管理器  
-> CI/CD 管道对于自动化和标准化应用程序发布过程至关重要。新的更改通过多个环境传播，包括生产集群，并确保消费者可以使用最新的功能。在理想情况下，所有集群的配置都相似，这样工程团队就可以检查生产部署的真实模拟。这意味着每个集群、沙箱、暂存和生产都需要一组几乎相似的清单。为了减少监督每个集群的类似套件配置的管理开销，模板化是必要的。
-![](/image/image3.png)解决这个问题  
-`kubectl apply -f argocd-helm-python-prod.yaml`
-`kubectl apply -f argocd-helm-python-prod.yaml`
+CI/CD 管道对于自动化和标准化应用程序发布过程至关重要。新的更改通过多个环境传播，包括生产集群，并确保消费者可以使用最新的功能。在理想情况下，所有集群的配置都相似，这样工程团队就可以检查生产部署的真实模拟。这意味着每个集群、沙箱、暂存和生产都需要一组几乎相似的清单。为了减少监督每个集群的类似套件配置的管理开销，模板化是必要的。
+![](/image/image3.png)解决这个问题
+
+`kubectl apply -f argocd-helm-python-prod.yaml`  
+`kubectl apply -f argocd-helm-python-prod.yaml`  

@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
   # Set the static IP for the vagrant box
   config.vm.network "private_network", ip: "192.168.56.4"
   
-  config.vm.synced_folder ".", "/home/host"
+  config.vm.synced_folder ".", "/home/python-helloworld"
 
   # Configure the parameters for VirtualBox provider
   config.vm.provider "virtualbox" do |vb|
